@@ -19,6 +19,7 @@ systemctl disable NetworkManager
 
 yum install -y centos-release-openstack-train
 yum install -y openstack-packstack
+yum downgrade -y leatherman
 packstack --gen-answer-file=/root/answer.txt
 
 sed -i "s/^CONFIG_PROVISION_DEMO=.*/CONFIG_PROVISION_DEMO=n/g" /root/answer.txt
